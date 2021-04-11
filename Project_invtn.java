@@ -10,13 +10,26 @@ public class InventPro {
     int[] harga = new int[25];
     int[] stok = new int[25];
     int[] jumlah = new int[25];
-   
+    
+    public void menu(){
+        do{
+            System.out.println("jumlah produk yang ingin diinput : ");
+            semua = run.nextInt();
+
+            if (semua <= 0){
+                System.out.println("inputan yang anda masukkan lebih dari 0");
+            }else {
+                InputData();
+            }
+        }while (semua <= 0);
+    }
+    
     public void InputData(){
         try{
             for(int i=0;i < semua;i++){
-                
+            	jumBarang[i]=i+1;
                 run.nextLine();
-                jumBarang[i]=i+1;
+                
                 System.out.println("nama produk :  ");
                 nama[i] = run.nextLine();
 
@@ -38,18 +51,7 @@ public class InventPro {
             menu();
         }
     }
-    public void menu(){
-        do{
-            System.out.println("jumlah produk yang ingin diinput : ");
-            semua = run.nextInt();
-
-            if (semua <= 0){
-                System.out.println("inputan yang anda masukkan lebih dari 0");
-            }else {
-                InputData();
-            }
-        }while (semua <= 0);
-    }
+  
     public void getnilaidata(){
         for (int i =0; i < semua; i++){
         	System.out.println("===================");
